@@ -1,6 +1,0 @@
-<h1>Удалить клиента {{ client.first_name }} {{ client.last_name }}?</h1>
-<form method="post">
-    {% csrf_token %}
-    <button type="submit">Удалить</button>
-</form>
-<a href="{% url 'client_list' %}">Назад к списку</a>
