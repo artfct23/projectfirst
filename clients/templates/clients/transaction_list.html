@@ -1,0 +1,12 @@
+<h1>Транзакции клиента {{ client.first_name }} {{ client.last_name }}</h1>
+<a href="{% url 'transaction_create' client.pk %}">Добавить транзакцию</a>
+<ul>
+    {% for transaction in transactions %}
+        <li>
+            {{ transaction.amount }} ({{ transaction.transaction_type }}) — {{ transaction.date }}
+            <a href="{% url 'transaction_update' transaction.pk %}">Редактировать</a>
+            <a href="{% url 'transaction_delete' transaction.pk %}">Удалить</a>
+        </li>
+    {% endfor %}
+</ul>
+<a href="{% url 'client_list' %}">Назад к списку клиентов</a>
