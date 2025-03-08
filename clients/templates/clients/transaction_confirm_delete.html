@@ -1,0 +1,6 @@
+<h1>Удалить транзакцию {{ transaction.amount }} ({{ transaction.transaction_type }})?</h1>
+<form method="post">
+    {% csrf_token %}
+    <button type="submit">Удалить</button>
+</form>
+<a href="{% url 'transaction_list' transaction.client.pk %}">Назад к списку транзакций</a>
